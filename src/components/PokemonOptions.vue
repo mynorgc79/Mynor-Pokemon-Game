@@ -8,13 +8,22 @@
                 type:Array<ListPokemonOptions>,
                     required:true,
             }
+        },
+        methods: {
+            hola(){
+
+            }
+           
         }
     }
 </script>
 <template>
     <div class="options-container">
         <ul>
-        <li v-for="pokemon in pokemons" :key="pokemon.id">
+        <li v-for="pokemon in pokemons" 
+        :key="pokemon.id"
+        @click="$emit('selection',pokemon.id)"
+        >
             {{ pokemon.name }} 
          </li>
         
@@ -44,4 +53,7 @@
         justify-content: center;
 
     }
+
+
+    
 </style>
